@@ -1,0 +1,9 @@
+{
+    "name": "Sankey",
+    "version": "1.0.0",
+    "main": "./Sankey.js",
+    "dependencies": {
+    	"d3": "3.2.4",
+    	"requirejs": "latest"
+    }
+}

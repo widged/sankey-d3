@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sankey Chart</title>
+    <link rel="stylesheet" media="all" type="text/css" href="sankey.css" cph-ssorder="0">
+    <style>
+    body {
+        font-family: "Arvo", "Helvetica Neue", Helvetica, arial, sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script src="../bower_components/requirejs/require.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: '../',
+            urlArgs: "bust=v11", // use this to force a reload of all js files
+            paths: {
+                d3                 : 'bower_components/d3/d3',
+                sankeychart        : 'Sankey',
+                sankeylayout       : 'sankey-layout',
+            },
+            shim: {
+                d3:     { exports: 'd3' }
+            }
+        });
+    </script>
+    <script> 
+    window.onload = function() {
+        requirejs(["sankeychart"], function(Sankey) {
+
+            var rootNode = document.querySelector("#chart"),
+                dimensions = [400,300],
+                chartData, 
+                title = "Vegetables: family x inflorescence";
+
+            var rows = [["Apiaceae","umbel",2],["Alliaceae","flowers",1],["Alliaceae","paired",1],["Asteraceae","head",1],["Asteraceae","capitulum",1],["Lamiaceae","floriferous",1],["Lamiaceae","corymb",3],["Lamiaceae","like",1],["Lamiaceae","cyme",2],["Apiaceae","umbel",1],["Solanaceae","cyme",1],["Brassicaceae","raceme",1]];
+            chartData = Sankey.convertList(rows);
+
+            // title
+            var titleNode = document.createElement("div");
+            titleNode.classList.add("title");
+            titleNode.innerHTML = title;
+            rootNode.appendChild(titleNode);
+
+            // chart
+            var chartNode = document.createElement("div");
+            var renderer = (new Sankey()).load({
+                "data": chartData,
+                "width" : dimensions[0],
+                "height" : dimensions[1] - 15
+            });
+
+            renderer.mountIn(chartNode);
+            rootNode.appendChild(chartNode);
+        })
+    };
+    </script>
+
+</body>
+</html>
