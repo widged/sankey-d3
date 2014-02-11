@@ -25,7 +25,7 @@ Approach
 
 There is nothing new about a sankey diagram. The problem of drawing one with d3 has been solved long ago. You can refer to this interactive demonstration by Mike Bostock - http://bost.ocks.org/mike/sankey/.
 
-My contribution is of slightly different nature. How to organize the code to make it easy to reuse. Provider reusable components without imposing any dependency on a framework. The Sankey diagram is the first to come out. Others components will follow. Some will be based on d3, others not. 
+My contribution is of slightly different nature. How to organize the code to make it easy to reuse. Provide reusable components without imposing any dependency on a framework. The Sankey diagram is the first to come out. Others components will follow. Some will be based on d3, others not. 
 
 The requirejs library is used to support a modular architecture. The code is organized in modules that very much play the role of what would be classes in traditional OO models. 
 
