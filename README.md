@@ -23,7 +23,7 @@ Changed by Marielle Lange to use a flyweight pattern in order to minimise the am
 Approach
 ---------
 
-There is nothing new about a sankey diagram. The problem of drawing one with d3 has been solved long ago. You can refer to this (interactive demonstration by Mike Bostock)[http://bost.ocks.org/mike/sankey/].
+There is nothing new about a sankey diagram. The problem of drawing one with d3 has been solved long ago. You can refer to this (http://bost.ocks.org/mike/sankey/)[interactive demonstration by Mike Bostock].
 
 My contribution is of slightly different nature. How to organize the code to make it easy to reuse. Provider reusable components without imposing any dependency on a framework. The Sankey diagram is the first to come out. Others components will follow. Some will be based on d3, others not. 
 
