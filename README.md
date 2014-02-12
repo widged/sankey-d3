@@ -31,5 +31,5 @@ There is nothing new about a sankey diagram. The problem of drawing one with d3 
 
 My contribution is of slightly different nature. How to organize the code to make it easy to reuse. Provide reusable components without imposing any dependency on a framework. The Sankey diagram is the first to come out. Others components will follow. Some will be based on d3, others not. 
 
-That approach is described in [vanilla-class github project][https://github.com/widged/vanilla-class]
+That approach is described in [vanilla-class github project](https://github.com/widged/vanilla-class)
 
